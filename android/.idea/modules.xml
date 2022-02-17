@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android.iml" filepath="$PROJECT_DIR$/.idea/modules/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1675512026/android.connectivity.iml" filepath="$PROJECT_DIR$/.idea/modules/1675512026/android.connectivity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-921359819/android.fluttertoast.iml" filepath="$PROJECT_DIR$/.idea/modules/-921359819/android.fluttertoast.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1953581659/android.package_info.iml" filepath="$PROJECT_DIR$/.idea/modules/-1953581659/android.package_info.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2010019775/android.permission_handler.iml" filepath="$PROJECT_DIR$/.idea/modules/2010019775/android.permission_handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1033428339/android.shared_preferences_android.iml" filepath="$PROJECT_DIR$/.idea/modules/1033428339/android.shared_preferences_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2039001370/android.webview_flutter_android.iml" filepath="$PROJECT_DIR$/.idea/modules/-2039001370/android.webview_flutter_android.iml" />
+    </modules>
+  </component>
+</project>
