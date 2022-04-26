@@ -3,6 +3,7 @@ import 'dart:async';
 // import '../screens/products_overview_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:maison_galaxy/helpers/config.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -122,7 +123,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   Future<String> getSharedPref() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    String url = "http://maisongalaxy.com/";
+    String url = Config.API_BASE_URL;
     if (prefs.containsKey("URL")) {
       url = prefs.getString("URL")!;
     }

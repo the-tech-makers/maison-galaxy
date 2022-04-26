@@ -227,7 +227,7 @@ class _AuthCardState extends State<AuthCard> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     // try {
     print("Email:" + _authData['username'].toString());
-    String url = Config.API_BASE_URL;
+    String url = Config.API_BASE_URL+"rest/all/V1/ttm/login-api/";
     final response = await http.post(
       Uri.parse(url),
       headers: {'Content-type': 'application/json'},
