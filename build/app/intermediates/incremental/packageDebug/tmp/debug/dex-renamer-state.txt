@@ -1,4 +1,0 @@
-#Tue Apr 26 22:31:44 IST 2022
-base.0=/Users/naveenchaudhary/Documents/TTM/maison_galaxy/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
-renamed.0=classes.dex
-path.0=classes.dex
