@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/maison_galaxy.iml" filepath="$PROJECT_DIR$/.idea/maison_galaxy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/maison_galaxy_android.iml" filepath="$PROJECT_DIR$/android/maison_galaxy_android.iml" />
     </modules>
   </component>
 </project>

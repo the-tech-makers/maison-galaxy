@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 project(runner LANGUAGES CXX)
 
-set(BINARY_NAME "maison_galaxy")
+set(BINARY_NAME "Maison Galaxy")
 set(APPLICATION_ID "com.maison.galaxy.maison_galaxy")
 
 cmake_policy(SET CMP0063 NEW)

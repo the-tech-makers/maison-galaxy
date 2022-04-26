@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:maison_galaxy/Models/user_d_t_o.dart';
+import 'package:maison_galaxy/helpers/config.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'dashboard_screen.dart';
@@ -226,7 +227,7 @@ class _AuthCardState extends State<AuthCard> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     // try {
     print("Email:" + _authData['username'].toString());
-    String url = 'https://maison.mywwwserver.in/rest/all/V1/ttm/login-api/';
+    String url = Config.API_BASE_URL;
     final response = await http.post(
       Uri.parse(url),
       headers: {'Content-type': 'application/json'},
