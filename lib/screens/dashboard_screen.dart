@@ -24,7 +24,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
       Completer<WebViewController>();
   final CookieManager cookieManager = CookieManager();
   late String urls;
-  bool isLoading=false;
+  bool isLoading = false;
+
   @override
   void initState() {
     // TODO: implement initState
@@ -78,13 +79,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
               return NavigationDecision.navigate;
             },
             onPageStarted: (String url) {
-if(urls.contains("maisongalaxy")){
-  _showLoaderDialog(context);
-}
+              if (urls.contains("maisongalaxy")) {
+                _showLoaderDialog(context);
+              }
               print('Page started loading: $url');
             },
             onPageFinished: (String url) {
-              if(isLoading){
+              if (isLoading) {
                 Navigator.pop(context);
               }
 
@@ -145,19 +146,21 @@ if(urls.contains("maisongalaxy")){
     }
   }
 
-  _showLoaderDialog(BuildContext context){
-
-    AlertDialog alert=AlertDialog(
+  _showLoaderDialog(BuildContext context) {
+    AlertDialog alert = AlertDialog(
       content: new Row(
         children: [
           CircularProgressIndicator(),
-          Container(margin: EdgeInsets.only(left: 7),child:Text("Loading..." )),
-        ],),
+          Container(
+              margin: EdgeInsets.only(left: 7), child: Text("Loading...")),
+        ],
+      ),
     );
-    showDialog(barrierDismissible: false,
-      context:context,
-      builder:(BuildContext context){
-        isLoading=true;
+    showDialog(
+      barrierDismissible: false,
+      context: context,
+      builder: (BuildContext context) {
+        isLoading = true;
         return alert;
       },
     );
