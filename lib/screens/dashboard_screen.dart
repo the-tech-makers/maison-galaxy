@@ -112,13 +112,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
           builder: (context) => AlertDialog(
                 title: Text('Do you want to exit'),
                 actions: <Widget>[
-                  FlatButton(
+                  TextButton(
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
                     child: Text('No'),
                   ),
-                  FlatButton(
+                  TextButton(
                     onPressed: () {
                       SystemNavigator.pop();
                     },
@@ -135,6 +135,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
     String url = Config.API_BASE_URL;
     if (prefs.containsKey("URL")) {
       url = prefs.getString("URL")!;
+    }else if (prefs.containsKey("pp")) {
+      url = prefs.getString("pp")!;
     }
     return url;
   }
@@ -143,6 +145,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     if (prefs.containsKey("URL")) {
       prefs.remove("URL");
+    }
+    if (prefs.containsKey("pp")) {
+      prefs.remove("pp");
     }
   }
 

@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:connectivity/connectivity.dart';
+import 'package:flutter/gestures.dart';
 // import '../screens/products_overview_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -139,11 +140,13 @@ class _AuthCardState extends State<AuthCard> {
   var _isLoading = false;
   final _passwordController = TextEditingController();
   late String _setList;
+  late SharedPreferences prefs;
 
   @override
   void initState() {
     print("initstate");
     SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
+    SharedPreferences.getInstance().then((value) => value=prefs);
     // _connectivity = MyConnectivity.instance;
     super.initState();
   }
@@ -224,7 +227,7 @@ class _AuthCardState extends State<AuthCard> {
     setState(() {
       _isLoading = true;
     });
-    SharedPreferences prefs = await SharedPreferences.getInstance();
+
     // try {
     print("Email:" + _authData['username'].toString());
     String url = Config.API_BASE_URL+"rest/all/V1/ttm/login-api/";
@@ -411,11 +414,27 @@ class _AuthCardState extends State<AuthCard> {
                         children: <TextSpan>[
                           TextSpan(
                               text: 'Terms of use',
-                              style: TextStyle(fontWeight: FontWeight.bold)),
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            recognizer: TapGestureRecognizer()..onTap = () {
+                              var snackBar = SnackBar(
+                                  content: Text('Terms of use'));
+                              ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                              // prefs.setString("pp", Config.API_BASE_URL+"en/privacy-policy");
+                              // Navigator.of(context).pushReplacementNamed(DashboardScreen.routeName);
+                              // Single tapped.
+                            },),
                           TextSpan(text: ' and '),
                           TextSpan(
                               text: 'Privacy Policy',
-                              style: TextStyle(fontWeight: FontWeight.bold)),
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            recognizer: TapGestureRecognizer()..onTap = () {
+                              // var snackBar = SnackBar(
+                              //     content: Text('Privacy Policy'));
+                              // ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                              // prefs.setString("pp", Config.API_BASE_URL+"en/privacy-policy");
+                              Navigator.of(context).pushReplacementNamed(DashboardScreen.routeName);
+                              // Single tapped.
+                            },),
                         ],
                       ),
                     ),
