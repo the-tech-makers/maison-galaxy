@@ -79,14 +79,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
               return NavigationDecision.navigate;
             },
             onPageStarted: (String url) {
-              if (urls.contains("maisongalaxy")) {
+              // if (urls.contains("maisongalaxy")) {
                 _showLoaderDialog(context);
-              }
+              // }
               print('Page started loading: $url');
             },
             onPageFinished: (String url) {
               if (isLoading) {
                 Navigator.pop(context);
+                isLoading=false;
               }
 
               print('Page finished loading: $url');
@@ -152,6 +153,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   }
 
   _showLoaderDialog(BuildContext context) {
+    isLoading=true;
     AlertDialog alert = AlertDialog(
       content: new Row(
         children: [

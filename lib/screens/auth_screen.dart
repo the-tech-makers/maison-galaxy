@@ -146,7 +146,7 @@ class _AuthCardState extends State<AuthCard> {
   void initState() {
     print("initstate");
     SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
-    SharedPreferences.getInstance().then((value) => value=prefs);
+    SharedPreferences.getInstance().then((value) => prefs=value);
     // _connectivity = MyConnectivity.instance;
     super.initState();
   }
@@ -431,8 +431,9 @@ class _AuthCardState extends State<AuthCard> {
                               // var snackBar = SnackBar(
                               //     content: Text('Privacy Policy'));
                               // ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                              // prefs.setString("pp", Config.API_BASE_URL+"en/privacy-policy");
-                              Navigator.of(context).pushReplacementNamed(DashboardScreen.routeName);
+                              prefs.setString("pp", Config.API_BASE_URL+"en/privacy-policy");
+                              Navigator.of(context).pushReplacementNamed(
+                                  DashboardScreen.routeName);
                               // Single tapped.
                             },),
                         ],
