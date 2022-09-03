@@ -45,6 +45,9 @@ class _SplashScreenState extends State<SplashScreen> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     bool dataExist = prefs.containsKey("URL");
     // print('data:- ' + prefs.getString("URL").toString());
+    if (prefs.containsKey("pp")) {
+      prefs.remove("pp");
+    }
     if (dataExist) {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
           builder: (BuildContext context) => DashboardScreen()));

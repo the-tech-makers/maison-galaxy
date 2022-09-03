@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'screens/auth_screen.dart';
 import 'screens/dashboard_screen.dart';
 import 'screens/splash_screen.dart';
-import 'screens/web_view.dart';
 
 void main() {
   runApp(MyApp());
@@ -52,7 +51,6 @@ class MyApp extends StatelessWidget {
           // SplashScreen.routeName: (ctx) => SplashScreen(),
           AuthScreen.routeName: (ctx) => AuthScreen(),
           // CartScreen.routeName: (ctx) => CartScreen(),
-          Webview.routeName: (ctx) => Webview(),
           DashboardScreen.routeName: (ctx) => DashboardScreen(),
         });
   }
